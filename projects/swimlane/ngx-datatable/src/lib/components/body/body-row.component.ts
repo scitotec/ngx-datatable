@@ -98,7 +98,7 @@ export class DataTableBodyRowComponent implements DoCheck {
     if (this.isSelected) {
       cls += ' active';
     }
-    const idx = +(/^((\d+)-)?(\d+)$/.exec(this.rowIndex as any) || [])[3];
+    const idx = typeof this.rowIndex == 'number' ? this.rowIndex : 0;
     if (idx % 2 !== 0) {
       cls += ' datatable-row-odd';
     }
